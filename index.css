@@ -1,0 +1,418 @@
+:root {
+  --main-yellow: #ffc600;
+  --main-text-color: #444;
+  --accent-purple: #7047d7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  padding: 2rem;
+  background-image: linear-gradient(110deg, #f93d66, #6d47d9);
+}
+
+.container {
+  max-width: 100vw;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: white;
+}
+
+/* ============================================================================================================================*/
+/* ============================================================== MENU ========================================================*/
+/* ============================================================================================================================*/
+
+menu {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  background-color: var(--main-yellow);
+  flex-direction: column;
+  transform: translateX(-200%);
+  transition: transform 350ms ease-out;
+}
+
+.primary-navigation[data-visible="true"] {
+  transform: translateX(0%);
+  transition: transform 350ms ease-out;
+}
+
+.menu-item {
+  background-color: var(--main-yellow);
+  text-transform: uppercase;
+  padding: 1em 3rem;
+  text-align: left;
+  font-weight: 800;
+  display: inline-block;
+  letter-spacing: -2px;
+}
+
+.menu-item:first-of-type {
+  margin-top: 5rem;
+}
+
+.menu-item:hover {
+  background-color: var(--accent-purple);
+  color: white;
+}
+
+.mobile-nav-toggle {
+  z-index: 99999;
+  top: 1em;
+  padding: 0.2em;
+  border: none;
+  background-color: transparent;
+  margin-bottom: 1em;
+}
+
+.btn-close {
+  margin: 20px;
+  background: #ddd;
+  float: left;
+  border-radius: 50%;
+  width: 50px;
+  z-index: 99999999;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transition: all 1s ease;
+}
+
+svg {
+  display: block;
+}
+
+.close-x {
+  stroke: black;
+  fill: transparent;
+  stroke-linecap: round;
+  stroke-width: 5;
+}
+
+/* ============================================================================================================================*/
+/* ============================================================== HERO  =======================================================*/
+/* ============================================================================================================================*/
+
+.hero {
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing {
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-item {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  background-color: var(--main-yellow);
+  margin-top: 1rem;
+  padding: 0.5em;
+}
+
+.pricing-item:last-of-type {
+  margin-bottom: 1rem;
+}
+
+.pricing-item span {
+  display: block;
+}
+
+.pricing-item-item {
+  font-size: 0.8rem;
+}
+
+.hero-image {
+  background-image: url(https://jolly-kalam-23776e.netlify.app/restaurantwebsite/images/taco.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.hero-image span.title,
+span.subtitle {
+  display: block;
+  background-color: var(--main-yellow);
+
+  margin-left: 3rem;
+  width: auto;
+}
+
+.hero-image span.title {
+  margin-bottom: 1em;
+  font-size: 1.2rem;
+  padding: 1.2rem;
+}
+
+.hero-image span.subtitle {
+  font-size: 0.8rem;
+  padding: 1em 1.2rem;
+}
+
+/* ============================================================================================================================*/
+/* ============================================================== PRODUCTS ROW  ===============================================*/
+/* ============================================================================================================================*/
+.products {
+  display: flex;
+  flex-direction: column;
+}
+
+.product {
+  width: 100%;
+  background-color: white;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+}
+
+.icon {
+  font-size: 1.7rem;
+}
+
+.item-title {
+  font-weight: 600;
+  margin: 1em 0;
+}
+
+.item-description {
+  color: #444;
+  font-size: 0.8rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+/* ============================================================================================================================*/
+/* ============================================================== FEATURED PRODUCT ============================================*/
+/* ============================================================================================================================*/
+
+.featured-item {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.taco-image {
+  width: 80%;
+}
+
+h2.featured-title {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.featured-paragraph {
+  margin-bottom: 1rem;
+}
+
+.featured-button {
+  display: block;
+  background-color: var(--main-yellow);
+  color: black;
+  padding: 1em 3em;
+  width: 250px;
+  text-align: center;
+}
+
+.featured-button:hover {
+  color: white;
+  background-color: var(--accent-purple);
+}
+
+.divider {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0 1rem;
+}
+
+/* ============================================================================================================================*/
+/* ============================================================== INSTAGRAM  ==================================================*/
+/* ============================================================================================================================*/
+
+h2.title {
+  text-align: center;
+}
+
+.instagram {
+  display: flex;
+  flex-direction: column;
+}
+
+.instagram-image img {
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+/* ============================================================================================================================*/
+/* ============================================================== MEDIUM SCREEN  ==============================================*/
+/* ============================================================================================================================*/
+
+@media (min-width: 700px) {
+  .mobile-nav-toggle,
+  .btn-close {
+    display: none;
+  }
+
+  .hero {
+    flex-direction: row;
+    margin-bottom: 1rem;
+  }
+
+  .hero-image {
+    flex-grow: 2;
+    flex-basis: 60%;
+    margin-right: 1rem;
+  }
+
+  .pricing {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 30%;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .pricing-item {
+    margin: 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 3.5rem;
+  }
+
+  .pricing-item:last-of-type {
+    margin: 0;
+    margin-top: 1rem;
+  }
+
+  .products {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .product {
+    flex-basis: 48%;
+  }
+
+  .product:first-of-type {
+    margin-right: 1rem;
+  }
+
+  .featured-item {
+    flex-direction: row;
+  }
+
+  .taco-image {
+    width: 50%;
+  }
+
+  .instagram {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .instagram-image img {
+    width: calc(50vw - 3rem);
+  }
+}
+
+/* ============================================================================================================================*/
+/* ============================================================== LARGE SCREEN ================================================*/
+/* ============================================================================================================================*/
+
+@media (min-width: 1000px) {
+  menu {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+    transform: translateX(0%);
+    height: auto;
+    background-color: transparent;
+    transition: none;
+  }
+
+  .menu-item {
+    flex-basis: 19%;
+    text-align: center;
+  }
+
+  .menu-item:first-of-type {
+    margin-top: 0;
+  }
+
+  .hero span.title {
+    font-size: 2rem;
+    font-weight: 800;
+    width: auto;
+  }
+
+  .hero span.subtitle {
+    font-size: 1rem;
+  }
+
+  .item-title {
+    font-size: 1.4rem;
+  }
+
+  .icon {
+    font-size: 3.5rem;
+  }
+
+  .pricing-item-item {
+    font-size: 1rem;
+    font-weight: 800;
+  }
+
+  .product {
+    flex-basis: calc(25% - 1rem);
+  }
+
+  .product:first-of-type {
+    margin-right: 0;
+  }
+
+  .featured-item-description {
+    padding-right: max(15rem, 30%);
+  }
+
+  .instagram {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .instagram img {
+    max-width: 100%;
+    overflow: hidden;
+  }
+}
